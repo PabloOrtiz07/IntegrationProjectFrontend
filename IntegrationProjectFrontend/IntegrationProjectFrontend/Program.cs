@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
+
 namespace IntegrationProjectFrontend
 {
     public class Program
@@ -6,9 +8,41 @@ namespace IntegrationProjectFrontend
         {
             var builder = WebApplication.CreateBuilder(args);
 
+
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
+            builder.Services.AddHttpClient("useApi", config =>
+            {
+                config.BaseAddress = new Uri(builder.Configuration["ServiceUrl:ApiUrl"]);
+            });
+
+            builder.Services.AddAuthentication(option =>
+            {
+                option.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                option.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                option.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+            }).AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, config =>
+            {
+                config.Events.OnRedirectToLogin = context =>
+                {
+                    context.Response.Redirect("https://localhost:7167/");
+                    return Task.CompletedTask;
+                };
+            });
+
+
+
+            builder.Services.AddAuthorization(options =>
+            {
+                options.AddPolicy("Administrator", policy =>
+                {
+                    policy.RequireRole("Administrator");
+                });
+            });
+
+            builder.Services.AddSession();
+                
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -24,7 +58,11 @@ namespace IntegrationProjectFrontend
 
             app.UseRouting();
 
+            app.UseAuthentication();
+
             app.UseAuthorization();
+
+            app.UseSession();
 
             app.MapControllerRoute(
                 name: "default",

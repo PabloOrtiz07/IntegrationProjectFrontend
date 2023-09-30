@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Pablo\\Desktop\\IntegrationProjectFrontend\\IntegrationProjectFrontend\\IntegrationProjectFrontend.csproj": {}
+    "C:\\Users\\Pablo\\Desktop\\IntegrationProjectFrontend\\IntegrationProjectFrontend\\IntegrationProjectFrontend\\IntegrationProjectFrontend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Pablo\\Desktop\\Data\\Data\\Data.csproj": {
+    "C:\\Users\\Pablo\\Desktop\\IntegrationProjectFrontend\\IntegrationProjectFrontend\\Data\\Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Pablo\\Desktop\\Data\\Data\\Data.csproj",
+        "projectUniqueName": "C:\\Users\\Pablo\\Desktop\\IntegrationProjectFrontend\\IntegrationProjectFrontend\\Data\\Data.csproj",
         "projectName": "Data",
-        "projectPath": "C:\\Users\\Pablo\\Desktop\\Data\\Data\\Data.csproj",
+        "projectPath": "C:\\Users\\Pablo\\Desktop\\IntegrationProjectFrontend\\IntegrationProjectFrontend\\Data\\Data.csproj",
         "packagesPath": "C:\\Users\\Pablo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Pablo\\Desktop\\Data\\Data\\obj\\",
+        "outputPath": "C:\\Users\\Pablo\\Desktop\\IntegrationProjectFrontend\\IntegrationProjectFrontend\\Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Pablo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,20 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Mvc.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Core": {
+              "target": "Package",
+              "version": "[2.2.5, )"
+            },
+            "Microsoft.Extensions.Http": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -59,14 +73,14 @@
         }
       }
     },
-    "C:\\Users\\Pablo\\Desktop\\IntegrationProjectFrontend\\IntegrationProjectFrontend\\IntegrationProjectFrontend.csproj": {
+    "C:\\Users\\Pablo\\Desktop\\IntegrationProjectFrontend\\IntegrationProjectFrontend\\IntegrationProjectFrontend\\IntegrationProjectFrontend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Pablo\\Desktop\\IntegrationProjectFrontend\\IntegrationProjectFrontend\\IntegrationProjectFrontend.csproj",
+        "projectUniqueName": "C:\\Users\\Pablo\\Desktop\\IntegrationProjectFrontend\\IntegrationProjectFrontend\\IntegrationProjectFrontend\\IntegrationProjectFrontend.csproj",
         "projectName": "IntegrationProjectFrontend",
-        "projectPath": "C:\\Users\\Pablo\\Desktop\\IntegrationProjectFrontend\\IntegrationProjectFrontend\\IntegrationProjectFrontend.csproj",
+        "projectPath": "C:\\Users\\Pablo\\Desktop\\IntegrationProjectFrontend\\IntegrationProjectFrontend\\IntegrationProjectFrontend\\IntegrationProjectFrontend.csproj",
         "packagesPath": "C:\\Users\\Pablo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Pablo\\Desktop\\IntegrationProjectFrontend\\IntegrationProjectFrontend\\obj\\",
+        "outputPath": "C:\\Users\\Pablo\\Desktop\\IntegrationProjectFrontend\\IntegrationProjectFrontend\\IntegrationProjectFrontend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Pablo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -83,8 +97,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Pablo\\Desktop\\Data\\Data\\Data.csproj": {
-                "projectPath": "C:\\Users\\Pablo\\Desktop\\Data\\Data\\Data.csproj"
+              "C:\\Users\\Pablo\\Desktop\\IntegrationProjectFrontend\\IntegrationProjectFrontend\\Data\\Data.csproj": {
+                "projectPath": "C:\\Users\\Pablo\\Desktop\\IntegrationProjectFrontend\\IntegrationProjectFrontend\\Data\\Data.csproj"
               }
             }
           }
@@ -98,6 +112,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
