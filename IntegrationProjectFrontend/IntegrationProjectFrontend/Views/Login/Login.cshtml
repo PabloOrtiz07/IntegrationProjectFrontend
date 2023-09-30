@@ -1,4 +1,5 @@
-﻿﻿@{
+﻿@{
+
     Layout = null;
 }
 <!doctype html>
@@ -27,12 +28,12 @@
                 <div class="col-md-6 col-lg-4">
                     <div class="login-wrap p-0">
                         <h3 class="mb-4 text-center">Tienes una cuenta?</h3>
-                        <form action="Login/Ingresar" class="signin-form">
+                        <form action="Login/LoginByEmail" class="signin-form">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Usuario" name="Mail" required>
+                                <input type="text" class="form-control" placeholder="User" name="Email" required>
                             </div>
                             <div class="form-group">
-                                <input id="password-field" type="password" class="form-control" placeholder="Contraseña" name="Password" required>
+                                <input id="password-field" type="password" class="form-control" placeholder="Password" name="Password" required>
                                 <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
                             </div>
                             <div class="form-group">
