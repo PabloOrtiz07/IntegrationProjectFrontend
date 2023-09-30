@@ -7,6 +7,8 @@ let table = new DataTable('#users', {
         headers: { "Authorization": "Bearer " + token }
     },
     columns: [
+        { data: 'id', title: 'Id' },
+
         { data: 'firstName', title: 'Nombre' },
         { data: 'lastName', title: 'Apellido' },
         { data: 'dni', title: 'Dni' },
