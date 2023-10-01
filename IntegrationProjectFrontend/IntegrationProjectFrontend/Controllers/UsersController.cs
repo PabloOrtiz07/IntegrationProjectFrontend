@@ -24,12 +24,17 @@ namespace IntegrationProjectFrontend.Controllers
 
         public async Task<IActionResult> UsersAddPartial([FromBody] UserDTO userDTO)
         {
-             var usersViewModel = new UsersViewModel();
+            var usersViewModel = new UsersViewModel();
 
-             if (userDTO != null)
-             {
-                 usersViewModel = userDTO;
-             }
+            if (userDTO != null)
+            {
+                usersViewModel = userDTO;
+            }
+
+            if (Request.Query.ContainsKey("IsDeleted") && Request.Query["IsDeleted"] == "true")
+            {
+                usersViewModel.IsDeleted = true;
+            }
 
             return PartialView("~/Views/Users/Partial/UsersAddPartial.cshtml", usersViewModel);
         }
@@ -45,8 +50,36 @@ namespace IntegrationProjectFrontend.Controllers
         {
             var token = HttpContext.Session.GetString("Token");
             var baseApi = new BaseApi(_httpClient);
-            var users = baseApi.PutToApi("Users", user, token);
+            var id = user.Id;
+            var apiUrl = $"Users/{id}?parameter=0";
+            var users = baseApi.PutToApi(apiUrl, user, token);
             return View("~/Views/Users/Users.cshtml");
         }
+
+        public IActionResult DeleteUser(UserDTO user)
+        {
+       
+                // Retrieve the id from the request body
+                var id = user.Id;
+
+                // Ensure id is not null or empty
+        
+
+                // Continue with your action logic
+            var token = HttpContext.Session.GetString("Token");
+            var baseApi = new BaseApi(_httpClient);
+
+            var apiUrl = $"Users/{id}?parameter=0";
+            var users = baseApi.DeleteToApi(apiUrl, id.ToString(), token);
+
+            return View("~/Views/Users/Users.cshtml");
+            
+
+        }
+
+
+
+
+
     }
 }

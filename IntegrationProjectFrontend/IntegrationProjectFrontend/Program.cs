@@ -53,6 +53,8 @@ namespace IntegrationProjectFrontend
                 app.UseHsts();
             }
 
+
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
@@ -63,6 +65,8 @@ namespace IntegrationProjectFrontend
             app.UseAuthorization();
 
             app.UseSession();
+
+
 
             app.MapControllerRoute(
                 name: "default",

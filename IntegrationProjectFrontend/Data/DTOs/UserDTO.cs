@@ -16,5 +16,7 @@ namespace Data.DTOs
         public string Password { get; set; }
         public string Email { get; set; }
         public int RoleId { get; set; }
+
+       public bool isDelete { get; set; }
     }
 }

@@ -1,8 +1,9 @@
 ﻿namespace IntegrationProjectFrontend.ViewModels
 {
-    public class HomeViewModel
+    public class LoginViewModel
     {
-        public string Token { get; set; }
+        // Other properties...
 
+        public string ErrorMessage { get; set; }
     }
 }

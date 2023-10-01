@@ -32,30 +32,39 @@ namespace IntegrationProjectFrontend.Controllers
             var baseApi = new BaseApi(_httpClient);
             var token = await baseApi.PostToApi("Authorize", login);
             var responseLogin = token as OkObjectResult;
-
-            var responseObject = JsonConvert.DeserializeObject<ApiResponse<UserLogin>>(responseLogin.Value.ToString());
-
-            var identity = new ClaimsIdentity(CookieAuthenticationDefaults.AuthenticationScheme, ClaimTypes.Name, ClaimTypes.Role);
-            // Claim claimName = new(ClaimTypes.Name, responseObject.Data.FirstName);
-            Claim claimRole = new(ClaimTypes.Role, "Administrator");
-
-
-           // identity.AddClaim(claimName);
-            identity.AddClaim(claimRole);
-
-            ClaimsPrincipal claimPrincipal = new ClaimsPrincipal(identity);
-
-            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, claimPrincipal, new AuthenticationProperties
+            if (responseLogin != null && responseLogin.Value != null)
             {
-                ExpiresUtc = DateTime.Now.AddHours(1),
-            });
+               var responseObject = JsonConvert.DeserializeObject<ApiResponse<UserLogin>>(responseLogin.Value.ToString());
+                var identity = new ClaimsIdentity(CookieAuthenticationDefaults.AuthenticationScheme, ClaimTypes.Name, ClaimTypes.Role);
+                // Claim claimName = new(ClaimTypes.Name, responseObject.Data.FirstName);
+                Claim claimRole = new(ClaimTypes.Role, "Administrator");
 
-             HttpContext.Session.SetString("Token", responseObject.Data.Token);
 
-             var homeViewModel = new HomeViewModel();
-             homeViewModel.Token = responseObject.Data.Token;
+                // identity.AddClaim(claimName);
+                identity.AddClaim(claimRole);
 
-            return View("~/Views/Home/Index.cshtml", homeViewModel);
+                ClaimsPrincipal claimPrincipal = new ClaimsPrincipal(identity);
+
+                await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, claimPrincipal, new AuthenticationProperties
+                {
+                    ExpiresUtc = DateTime.Now.AddHours(1),
+                });
+
+                HttpContext.Session.SetString("Token", responseObject.Data.Token);
+
+                var homeViewModel = new HomeViewModel();
+                homeViewModel.Token = responseObject.Data.Token;
+
+                return View("~/Views/Home/Index.cshtml", homeViewModel);
+            }
+            else
+            {
+                var loginViewModel = new LoginViewModel();
+                loginViewModel.ErrorMessage = "Invalid username or password."; // Customize this message as needed
+                return View("~/Views/Login/Login.cshtml", loginViewModel);
+            }
+            
+
         }
 
         public async Task<IActionResult> LogOut()
