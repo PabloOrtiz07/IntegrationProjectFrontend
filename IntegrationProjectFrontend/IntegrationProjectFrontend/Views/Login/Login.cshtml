@@ -1,7 +1,9 @@
-﻿@{
+﻿@model IntegrationProjectFrontend.ViewModels.LoginViewModel
 
+@{
     Layout = null;
 }
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -21,13 +23,12 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-6 text-center mb-5">
-                    <h2 class="heading-section">Umsa Softtek</h2>
+                    <h2 class="heading-section">Project Integration Softttek Frontend</h2>
                 </div>
             </div>
             <div class="row justify-content-center">
                 <div class="col-md-6 col-lg-4">
                     <div class="login-wrap p-0">
-                        <h3 class="mb-4 text-center">Tienes una cuenta?</h3>
                         <form action="Login/LoginByEmail" class="signin-form">
                             <div class="form-group">
                                 <input type="text" class="form-control" placeholder="User" name="Email" required>
@@ -36,16 +37,21 @@
                                 <input id="password-field" type="password" class="form-control" placeholder="Password" name="Password" required>
                                 <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
                             </div>
-                            <div class="form-group">
-                                <p class="error-login">@ViewBag.ErrorLogin</p>
-                            </div>
-                            <div class="form-group">
-                                <button type="submit" class="form-control btn btn-primary submit px-3">Iniciar Sesion</button>
-                            </div>
-                            <p class="w-100 text-center">&mdash; Ingresar con &mdash;</p>
-                            <div class="social d-flex text-center">
-                                <a asp-controller="Login" asp-action="LoginGoogle" class="px-2 py-2 mr-md-1 rounded"><span class="ion-logo-google mr-2"></span> Google</a>
-                            </div>
+                            @if (Model != null)
+                            {
+                                <div class="form-group">
+                                    <p class="error-login">@Model.ErrorMessage</p>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="form-control btn btn-primary submit px-3" onclick="clearModel()">Retry</button>
+                                </div>
+                            }
+                            @if (Model == null)
+                            {
+                                <div class="form-group">
+                                    <button type="submit" class="form-control btn btn-primary submit px-3">Login</button>
+                                </div>
+                            }
                         </form>
                     </div>
                 </div>
@@ -53,7 +59,13 @@
         </div>
     </section>
 
+    <script>
+        function clearModel() {
 
+            window.location.href = 'https://localhost:7167/';
+
+        }
+    </script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="js/popper.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>

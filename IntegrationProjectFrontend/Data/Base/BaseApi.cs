@@ -71,5 +71,38 @@ namespace Data.Base
                 return BadRequest(ex);
             }
         }
+        public async Task<IActionResult> DeleteToApi(string controllerName, string id, string token = "")
+        {
+            try
+            {
+                var client = _httpClient.CreateClient("useApi");
+
+                if (!string.IsNullOrEmpty(token))
+                {
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+                }
+
+                var response = await client.DeleteAsync($"{controllerName}");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    // Successfully deleted
+                    return Ok(); // You can return any response you prefer for a successful deletion.
+                }
+
+                if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+                {
+                    // Handle the case where the resource to delete was not found.
+                    return NotFound();
+                }
+
+                return BadRequest(); // Handle other error cases as needed.
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions here, such as network errors or other issues.
+                return StatusCode(500, ex.Message); // You can return an appropriate error response.
+            }
+        }
     }
 }
