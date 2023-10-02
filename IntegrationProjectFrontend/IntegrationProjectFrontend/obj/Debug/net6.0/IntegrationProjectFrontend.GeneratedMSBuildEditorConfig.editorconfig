@@ -24,6 +24,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Pablo/Desktop/IntegrationProjectFrontend/IntegrationProjectFrontend/IntegrationProjectFrontend/Views/Projects/Partial/ProjectsAddPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdHNcUGFydGlhbFxQcm9qZWN0c0FkZFBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Pablo/Desktop/IntegrationProjectFrontend/IntegrationProjectFrontend/IntegrationProjectFrontend/Views/Projects/Projects.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdHNcUHJvamVjdHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Pablo/Desktop/IntegrationProjectFrontend/IntegrationProjectFrontend/IntegrationProjectFrontend/Views/Services/Partial/ServicesAddPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZXNcUGFydGlhbFxTZXJ2aWNlc0FkZFBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -46,6 +54,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Pablo/Desktop/IntegrationProjectFrontend/IntegrationProjectFrontend/IntegrationProjectFrontend/Views/Users/Users.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcVXNlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Pablo/Desktop/IntegrationProjectFrontend/IntegrationProjectFrontend/IntegrationProjectFrontend/Views/Works/Partial/WorksAddPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV29ya3NcUGFydGlhbFxXb3Jrc0FkZFBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Pablo/Desktop/IntegrationProjectFrontend/IntegrationProjectFrontend/IntegrationProjectFrontend/Views/Works/Works.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV29ya3NcV29ya3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Pablo/Desktop/IntegrationProjectFrontend/IntegrationProjectFrontend/IntegrationProjectFrontend/Views/_ViewImports.cshtml]

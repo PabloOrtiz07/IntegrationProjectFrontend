@@ -1,0 +1,78 @@
+﻿@model IntegrationProjectFrontend.ViewModels.ProjectsViewModel
+
+<div class="modal fade" id="projectModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            @if (Model.Id == 0)
+            {
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Project registration.</h5>
+                </div>
+                @using (Html.BeginForm("RegisterProject", "Projects", FormMethod.Post)) // Change "Users" to "Projects"
+                {
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-6 mt-1 mb-3">
+                                <label class="col-md-4 form-control-label">Name</label> <!-- Update field name to match ProjectDTO -->
+                                @Html.EditorFor(x => x.Name, new { htmlAttributes = new { @class = "col-md-8 form-control" } }) <!-- Update field name to match ProjectDTO -->
+                            </div>
+
+                            <div class="col-md-6 mt-1 mb-3">
+                                <label class="col-md-2 form-control-label">Address</label> <!-- Update field name to match ProjectDTO -->
+                                @Html.EditorFor(x => x.Address, new { htmlAttributes = new { @class = "col-md-8 form-control" } }) <!-- Update field name to match ProjectDTO -->
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mt-1 mb-3">
+                                <label class="col-md-2 form-control-label">Status</label> <!-- Update field name to match ProjectDTO -->
+                                @Html.EditorFor(x => x.Status, new { htmlAttributes = new { @class = "col-md-8 form-control" } }) <!-- Update field name to match ProjectDTO -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-success" id="btnGuardar">Save</button>
+                    </div>
+                }
+            }
+            @if (Model.Id != 0)
+            {
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Project modification.</h5>
+                </div>
+                @using (Html.BeginForm("EditProject", "Projects", FormMethod.Post)) // Change "Users" to "Projects"
+                {
+                    @Html.HiddenFor(x => x.Id)
+
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-6 mt-1 mb-3">
+                                <label class="col-md-4 form-control-label">Name</label> <!-- Update field name to match ProjectDTO -->
+                                @Html.EditorFor(x => x.Name, new { htmlAttributes = new { @class = "col-md-8 form-control" } }) <!-- Update field name to match ProjectDTO -->
+                            </div>
+
+                            <div class="col-md-6 mt-1 mb-3">
+                                <label class="col-md-2 form-control-label">Address</label> <!-- Update field name to match ProjectDTO -->
+                                @Html.EditorFor(x => x.Address, new { htmlAttributes = new { @class = "col-md-8 form-control" } }) <!-- Update field name to match ProjectDTO -->
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mt-1 mb-3">
+                                <label class="col-md-2 form-control-label">Status</label> <!-- Update field name to match ProjectDTO -->
+                                @Html.EditorFor(x => x.Status, new { htmlAttributes = new { @class = "col-md-8 form-control" } }) <!-- Update field name to match ProjectDTO -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-success" id="btnGuardar">Save</button>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>

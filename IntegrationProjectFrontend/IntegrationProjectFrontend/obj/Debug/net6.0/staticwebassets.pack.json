@@ -29,6 +29,10 @@
       "PackagePath": "staticwebassets\\js\\Login\\Login.js"
     },
     {
+      "Id": "C:\\Users\\Pablo\\Desktop\\IntegrationProjectFrontend\\IntegrationProjectFrontend\\IntegrationProjectFrontend\\wwwroot\\js\\Projects\\Projects.js",
+      "PackagePath": "staticwebassets\\js\\Projects\\Projects.js"
+    },
+    {
       "Id": "C:\\Users\\Pablo\\Desktop\\IntegrationProjectFrontend\\IntegrationProjectFrontend\\IntegrationProjectFrontend\\wwwroot\\js\\Services\\Services.js",
       "PackagePath": "staticwebassets\\js\\Services\\Services.js"
     },
@@ -39,6 +43,10 @@
     {
       "Id": "C:\\Users\\Pablo\\Desktop\\IntegrationProjectFrontend\\IntegrationProjectFrontend\\IntegrationProjectFrontend\\wwwroot\\js\\Utils\\Utils.js",
       "PackagePath": "staticwebassets\\js\\Utils\\Utils.js"
+    },
+    {
+      "Id": "C:\\Users\\Pablo\\Desktop\\IntegrationProjectFrontend\\IntegrationProjectFrontend\\IntegrationProjectFrontend\\wwwroot\\js\\Works\\Works.js",
+      "PackagePath": "staticwebassets\\js\\Works\\Works.js"
     },
     {
       "Id": "C:\\Users\\Pablo\\Desktop\\IntegrationProjectFrontend\\IntegrationProjectFrontend\\IntegrationProjectFrontend\\wwwroot\\js\\site.js",

@@ -1,0 +1,113 @@
+﻿@model IntegrationProjectFrontend.ViewModels.WorksViewModel
+
+<div class="modal fade" id="workModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+
+            @if (Model.Id == 0)
+            {
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Work registration.</h5>
+                </div>
+                @using (Html.BeginForm("RegisterWork", "Works", FormMethod.Post))
+                {
+                    <div class="modal-body">
+                        <!-- Fields for WorkDTO -->
+                        <div class="row">
+                            <div class="col-md-6 mt-1 mb-3">
+                                <label class="col-md-4 form-control-label">Date</label>
+                                @Html.EditorFor(x => x.Date, new { htmlAttributes = new { @class = "col-md-8 form-control" } })
+                            </div>
+
+                            <div class="col-md-6 mt-1 mb-3">
+                                <label class="col-md-2 form-control-label">Hours Quantity</label>
+                                @Html.EditorFor(x => x.HoursQuantity, new { htmlAttributes = new { @class = "col-md-8 form-control" } })
+                            </div>
+                            <div class="col-md-6 mt-1 mb-3">
+                                <label class="col-md-2 form-control-label">Hourly Rate</label>
+                                @Html.EditorFor(x => x.HourlyRate, new { htmlAttributes = new { @class = "col-md-8 form-control" } })
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mt-1 mb-3">
+                                <label class="col-md-2 form-control-label">Cost</label>
+                                @Html.EditorFor(x => x.Cost, new { htmlAttributes = new { @class = "col-md-8 form-control" } })
+                            </div>
+
+                            <div class="col-md-6 mt-1 mb-3">
+                                <label class="col-md-5 form-control-label">Project ID</label>
+                                @Html.EditorFor(x => x.ProjectId, new { htmlAttributes = new { @class = "col-md-8 form-control" } })
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mt-1 mb-3">
+                                <label class="col-md-5 form-control-label">Service ID</label>
+                                @Html.EditorFor(x => x.ServiceId, new { htmlAttributes = new { @class = "col-md-8 form-control" } })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-success" id="btnGuardar">Save</button>
+                    </div>
+                }
+            }
+            @if (Model.Id != 0)
+            {
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Work modification.</h5>
+                </div>
+                @using (Html.BeginForm("EditWork", "Works", FormMethod.Post))
+                {
+                    @Html.HiddenFor(x => x.Id)
+
+                    <div class="modal-body">
+                        <!-- Fields for WorkDTO -->
+                        <div class="row">
+                            <div class="col-md-6 mt-1 mb-3">
+                                <label class="col-md-4 form-control-label">Date</label>
+                                @Html.EditorFor(x => x.Date, new { htmlAttributes = new { @class = "col-md-8 form-control" } })
+                            </div>
+
+                            <div class="col-md-6 mt-1 mb-3">
+                                <label class="col-md-2 form-control-label">Hours Quantity</label>
+                                @Html.EditorFor(x => x.HoursQuantity, new { htmlAttributes = new { @class = "col-md-8 form-control" } })
+                            </div>
+                            <div class="col-md-6 mt-1 mb-3">
+                                <label class="col-md-2 form-control-label">Hourly Rate</label>
+                                @Html.EditorFor(x => x.HourlyRate, new { htmlAttributes = new { @class = "col-md-8 form-control" } })
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mt-1 mb-3">
+                                <label class="col-md-2 form-control-label">Cost</label>
+                                @Html.EditorFor(x => x.Cost, new { htmlAttributes = new { @class = "col-md-8 form-control" } })
+                            </div>
+
+                            <div class="col-md-6 mt-1 mb-3">
+                                <label class="col-md-5 form-control-label">Project ID</label>
+                                @Html.EditorFor(x => x.ProjectId, new { htmlAttributes = new { @class = "col-md-8 form-control" } })
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mt-1 mb-3">
+                                <label class="col-md-5 form-control-label">Service ID</label>
+                                @Html.EditorFor(x => x.ServiceId, new { htmlAttributes = new { @class = "col-md-8 form-control" } })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-success" id="btnGuardar">Save</button>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
