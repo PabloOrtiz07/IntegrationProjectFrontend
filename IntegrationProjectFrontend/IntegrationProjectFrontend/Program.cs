@@ -37,7 +37,11 @@ namespace IntegrationProjectFrontend
             {
                 options.AddPolicy("Administrator", policy =>
                 {
-                    policy.RequireRole("Administrator");
+                    policy.RequireRole("1");
+                });
+                options.AddPolicy("Consultant", policy =>
+                {
+                    policy.RequireRole("2");
                 });
             });
 

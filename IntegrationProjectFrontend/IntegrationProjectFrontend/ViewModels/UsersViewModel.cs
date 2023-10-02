@@ -25,7 +25,6 @@ namespace IntegrationProjectFrontend.ViewModels
             usuariosViewModel.Email = usuario.Email;
             usuariosViewModel.Password = usuario.Password;
             usuariosViewModel.RoleId = usuario.RoleId;
-            usuariosViewModel.IsDeleted = false;
             return usuariosViewModel;
         }
     }

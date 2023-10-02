@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "wDB7LuhxLtmPWktrFKVGFOOMpuLAmVFZJIBaUGxVSKs=",
+  "Hash": "t/NTmU0hd0RQeSStWiNHpg4Wn+BpvNOzbw8t7B90iP8=",
   "Source": "IntegrationProjectFrontend",
   "BasePath": "_content/IntegrationProjectFrontend",
   "Mode": "Default",
@@ -151,6 +151,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\Login\\Login.js"
+    },
+    {
+      "Identity": "C:\\Users\\Pablo\\Desktop\\IntegrationProjectFrontend\\IntegrationProjectFrontend\\IntegrationProjectFrontend\\wwwroot\\js\\Services\\Services.js",
+      "SourceId": "IntegrationProjectFrontend",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Pablo\\Desktop\\IntegrationProjectFrontend\\IntegrationProjectFrontend\\IntegrationProjectFrontend\\wwwroot\\",
+      "BasePath": "_content/IntegrationProjectFrontend",
+      "RelativePath": "js/Services/Services.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Services\\Services.js"
     },
     {
       "Identity": "C:\\Users\\Pablo\\Desktop\\IntegrationProjectFrontend\\IntegrationProjectFrontend\\IntegrationProjectFrontend\\wwwroot\\js\\site.js",

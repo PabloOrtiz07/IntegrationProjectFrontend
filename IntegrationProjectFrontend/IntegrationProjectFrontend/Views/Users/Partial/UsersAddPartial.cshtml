@@ -56,7 +56,7 @@
                     </div>
                 }
             }
-            @if (Model.Id != 0 && Model.IsDeleted!=true)
+            @if (Model.Id != 0)
             {
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalCenterTitle">User modification.</h5>
@@ -109,25 +109,6 @@
                     </div>
                 }
             }
-
-            @if (Model.Id != 0 && Model.IsDeleted == true)
-            {
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalCenterTitle">Delete the user.</h5>
-                </div>
-                @using (Html.BeginForm("DeleteUser", "Users", FormMethod.Post))
-                {
-                    @Html.HiddenFor(x => x.Id)
-                    <div class="modal-body">
-                        <p>Are you sure you want to delete this user?</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-danger">Delete</button>
-                    </div>
-                }
-            }
- 
         </div>
     </div>
 </div>

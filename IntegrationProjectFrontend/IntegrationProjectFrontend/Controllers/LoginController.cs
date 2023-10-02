@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication;
 using IntegrationProjectFrontend.Models;
 using IntegrationProjectFrontend.ViewModels;
+using System.IdentityModel.Tokens.Jwt;
 
 namespace IntegrationProjectFrontend.Controllers
 {
@@ -37,8 +38,24 @@ namespace IntegrationProjectFrontend.Controllers
                var responseObject = JsonConvert.DeserializeObject<ApiResponse<UserLogin>>(responseLogin.Value.ToString());
                 var identity = new ClaimsIdentity(CookieAuthenticationDefaults.AuthenticationScheme, ClaimTypes.Name, ClaimTypes.Role);
                 // Claim claimName = new(ClaimTypes.Name, responseObject.Data.FirstName);
-                Claim claimRole = new(ClaimTypes.Role, "Administrator");
 
+                JwtSecurityTokenHandler hand = new JwtSecurityTokenHandler();
+                var tokenData = hand.ReadJwtToken(responseObject.Data.Token);
+
+                ClaimsIdentity claimsIdentity = new ClaimsIdentity(tokenData.Claims);
+
+                Claim claimRole;
+
+                var roleClaim = claimsIdentity.FindFirst(claim => claim.Type == ClaimTypes.Role);
+
+                if (roleClaim != null && roleClaim.Value == "1")
+                {
+                    claimRole = new Claim(ClaimTypes.Role, "Administrador");
+                }
+                else
+                {
+                    claimRole = new Claim(ClaimTypes.Role, "Consultor");
+                }
 
                 // identity.AddClaim(claimName);
                 identity.AddClaim(claimRole);

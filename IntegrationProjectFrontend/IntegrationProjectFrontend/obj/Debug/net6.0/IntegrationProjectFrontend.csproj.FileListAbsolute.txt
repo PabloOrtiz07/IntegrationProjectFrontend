@@ -77,3 +77,8 @@ C:\Users\Pablo\Desktop\IntegrationProjectFrontend\IntegrationProjectFrontend\Int
 C:\Users\Pablo\Desktop\IntegrationProjectFrontend\IntegrationProjectFrontend\IntegrationProjectFrontend\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
 C:\Users\Pablo\Desktop\IntegrationProjectFrontend\IntegrationProjectFrontend\IntegrationProjectFrontend\bin\Debug\net6.0\Newtonsoft.Json.dll
 C:\Users\Pablo\Desktop\IntegrationProjectFrontend\IntegrationProjectFrontend\IntegrationProjectFrontend\obj\Debug\net6.0\IntegrationProjectFrontend.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Pablo\Desktop\IntegrationProjectFrontend\IntegrationProjectFrontend\IntegrationProjectFrontend\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\Pablo\Desktop\IntegrationProjectFrontend\IntegrationProjectFrontend\IntegrationProjectFrontend\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Pablo\Desktop\IntegrationProjectFrontend\IntegrationProjectFrontend\IntegrationProjectFrontend\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Pablo\Desktop\IntegrationProjectFrontend\IntegrationProjectFrontend\IntegrationProjectFrontend\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Pablo\Desktop\IntegrationProjectFrontend\IntegrationProjectFrontend\IntegrationProjectFrontend\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
