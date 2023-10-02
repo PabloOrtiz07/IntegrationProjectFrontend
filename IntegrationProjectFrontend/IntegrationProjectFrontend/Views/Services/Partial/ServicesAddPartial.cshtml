@@ -1,0 +1,81 @@
+﻿@model IntegrationProjectFrontend.ViewModels.ServicesViewModel
+
+<div class="modal fade" id="serviceModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+
+            @if (Model.Id == 0)
+            {
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Service Registration</h5>
+                </div>
+                @using (Html.BeginForm("RegisterService", "Services", FormMethod.Post))
+                {
+                    <div class="modal-body">
+
+                        <div class="row">
+                            <div class="col-md-6 mt-1 mb-3">
+                                <label class="col-md-4 form-control-label">Description</label>
+                                @Html.EditorFor(x => x.Description, new { htmlAttributes = new { @class = "col-md-8 form-control" } })
+                            </div>
+
+                            <div class="col-md-6 mt-1 mb-3">
+                                <label class="col-md-2 form-control-label">Active</label>
+                                <div class="col-md-10">
+                                    @Html.CheckBoxFor(x => x.IsActive, new { @class = "form-check-input" })
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-6 mt-1 mb-3">
+                                <label class="col-md-2 form-control-label">Hourly Rate</label>
+                                @Html.EditorFor(x => x.HourlyRate, new { htmlAttributes = new { @class = "col-md-8 form-control" } })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-success" id="btnGuardar">Save</button>
+                    </div>
+                }
+            }
+            @if (Model.Id != 0)
+            {
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Service Modification</h5>
+                </div>
+                @using (Html.BeginForm("EditService", "Services", FormMethod.Post))
+                {
+                    @Html.HiddenFor(x => x.Id)
+
+                    <div class="modal-body">
+
+                        <div class="row">
+                            <div class="col-md-6 mt-1 mb-3">
+                                <label class="col-md-4 form-control-label">Description</label>
+                                @Html.EditorFor(x => x.Description, new { htmlAttributes = new { @class = "col-md-8 form-control" } })
+                            </div>
+
+                            <div class="col-md-6 mt-1 mb-3">
+                                <label class="col-md-2 form-control-label">Active</label>
+                                <div class="col-md-10">
+                                    @Html.CheckBoxFor(x => x.IsActive, new { @class = "form-check-input" })
+                                </div>
+                            </div>
+                            <div class="col-md-6 mt-1 mb-3">
+                                <label class="col-md-2 form-control-label">Hourly Rate</label>
+                                @Html.EditorFor(x => x.HourlyRate, new { htmlAttributes = new { @class = "col-md-8 form-control" } })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-success" id="btnGuardar">Save</button>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
