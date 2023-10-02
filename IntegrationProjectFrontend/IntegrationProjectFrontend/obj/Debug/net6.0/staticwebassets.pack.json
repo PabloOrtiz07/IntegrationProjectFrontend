@@ -29,6 +29,10 @@
       "PackagePath": "staticwebassets\\js\\Login\\Login.js"
     },
     {
+      "Id": "C:\\Users\\Pablo\\Desktop\\IntegrationProjectFrontend\\IntegrationProjectFrontend\\IntegrationProjectFrontend\\wwwroot\\js\\Services\\Services.js",
+      "PackagePath": "staticwebassets\\js\\Services\\Services.js"
+    },
+    {
       "Id": "C:\\Users\\Pablo\\Desktop\\IntegrationProjectFrontend\\IntegrationProjectFrontend\\IntegrationProjectFrontend\\wwwroot\\js\\Users\\Users.js",
       "PackagePath": "staticwebassets\\js\\Users\\Users.js"
     },
