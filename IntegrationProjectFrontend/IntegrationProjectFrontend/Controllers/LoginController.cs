@@ -37,7 +37,8 @@ namespace IntegrationProjectFrontend.Controllers
             {
                var responseObject = JsonConvert.DeserializeObject<ApiResponse<UserLogin>>(responseLogin.Value.ToString());
                 var identity = new ClaimsIdentity(CookieAuthenticationDefaults.AuthenticationScheme, ClaimTypes.Name, ClaimTypes.Role);
-                // Claim claimName = new(ClaimTypes.Name, responseObject.Data.FirstName);
+                
+                Claim claimName = new(ClaimTypes.Name, responseObject.Data.LastName);
 
                 JwtSecurityTokenHandler hand = new JwtSecurityTokenHandler();
                 var tokenData = hand.ReadJwtToken(responseObject.Data.Token);
@@ -54,10 +55,10 @@ namespace IntegrationProjectFrontend.Controllers
                 }
                 else
                 {
-                    claimRole = new Claim(ClaimTypes.Role, "Consultor");
+                    claimRole = new Claim(ClaimTypes.Role, "Consultant");
                 }
 
-                // identity.AddClaim(claimName);
+                identity.AddClaim(claimName);
                 identity.AddClaim(claimRole);
 
                 ClaimsPrincipal claimPrincipal = new ClaimsPrincipal(identity);
