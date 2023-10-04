@@ -38,7 +38,7 @@ namespace IntegrationProjectFrontend.Controllers
             var token = HttpContext.Session.GetString("Token");
             var baseApi = new BaseApi(_httpClient);
             var users = baseApi.PostToApi("Users", user, token);
-            return View("~/Views/Users/Users.cshtml");
+            return RedirectToAction("Users", "Users", new { area = "" });
         }
 
         public IActionResult EditUser(UserDTO user)
@@ -48,7 +48,7 @@ namespace IntegrationProjectFrontend.Controllers
             var id = user.Id;
             var apiUrl = $"Users/{id}?parameter=0";
             var users = baseApi.PutToApi(apiUrl, user, token);
-            return View("~/Views/Users/Users.cshtml");
+            return RedirectToAction("Users", "Users", new { area = "" });
         }
 
     }

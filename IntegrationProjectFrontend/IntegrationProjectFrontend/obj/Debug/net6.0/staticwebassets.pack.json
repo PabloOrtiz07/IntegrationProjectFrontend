@@ -21,6 +21,18 @@
       "PackagePath": "staticwebassets\\images\\bg.jpg"
     },
     {
+      "Id": "C:\\Users\\Pablo\\Desktop\\IntegrationProjectFrontend\\IntegrationProjectFrontend\\IntegrationProjectFrontend\\wwwroot\\images\\oil-rig-512531_1280.jpg",
+      "PackagePath": "staticwebassets\\images\\oil-rig-512531_1280.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pablo\\Desktop\\IntegrationProjectFrontend\\IntegrationProjectFrontend\\IntegrationProjectFrontend\\wwwroot\\images\\oil-rig-514035_1280.jpg",
+      "PackagePath": "staticwebassets\\images\\oil-rig-514035_1280.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Pablo\\Desktop\\IntegrationProjectFrontend\\IntegrationProjectFrontend\\IntegrationProjectFrontend\\wwwroot\\images\\refinery-514010_1280.jpg",
+      "PackagePath": "staticwebassets\\images\\refinery-514010_1280.jpg"
+    },
+    {
       "Id": "C:\\Users\\Pablo\\Desktop\\IntegrationProjectFrontend\\IntegrationProjectFrontend\\IntegrationProjectFrontend\\wwwroot\\js\\Home\\Home.js",
       "PackagePath": "staticwebassets\\js\\Home\\Home.js"
     },
