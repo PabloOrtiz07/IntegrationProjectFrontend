@@ -30,29 +30,32 @@
                 <div class="col-md-6 col-lg-4">
                     <div class="login-wrap p-0">
                         <form action="Login/LoginByEmail" class="signin-form">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="User" name="Email" required>
-                            </div>
-                            <div class="form-group">
-                                <input id="password-field" type="password" class="form-control" placeholder="Password" name="Password" required>
-                                <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
-                            </div>
                             @if (Model != null)
                             {
                                 <div class="form-group">
                                     <p class="error-login">@Model.ErrorMessage</p>
                                 </div>
-                                <div class="form-group">
-                                    <button type="submit" class="form-control btn btn-primary submit px-3" onclick="clearModel()">Retry</button>
-                                </div>
                             }
                             @if (Model == null)
                             {
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="User" name="Email" required>
+                                </div>
+                                <div class="form-group">
+                                    <input id="password-field" type="password" class="form-control" placeholder="Password" name="Password" required autocomplete="off">
+                                    <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                                </div>
                                 <div class="form-group">
                                     <button type="submit" class="form-control btn btn-primary submit px-3">Login</button>
                                 </div>
                             }
                         </form>
+                        @if (Model != null)
+                        {
+                            <div class="form-group">
+                                <button type="button" class="form-control  btn btn-primary submit px-3" onclick="clearModel()">Retry</button>
+                            </div>
+                        }
                     </div>
                 </div>
             </div>
@@ -63,7 +66,7 @@
         function clearModel() {
 
             window.location.href = 'https://localhost:7167/';
-
+            return false;
         }
     </script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
